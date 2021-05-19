@@ -123,8 +123,28 @@ class Grande : public Perro{
        }
        float get_cantidad();
        float set_cantidad();
-       float 
-
-       
-
+       int get_numero();
 };
+
+/*
+ * getter cantidad
+ * @param
+ * @return float:cantidad de alimento del perro
+*/
+float Grande::get_cantidad(){
+    return cantidad;
+};
+/*
+ * getter age
+ * @param
+ * @return int:numero del perro
+*/
+int Grande::get_numero(){
+    return numero;
+};
+/*
+ * setter cantidad
+ * @param 
+ * @return 
+*/
+
