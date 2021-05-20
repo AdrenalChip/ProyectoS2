@@ -16,6 +16,17 @@ using namespace std;
 void main (){
     int x=1;
     while (x=1){
-        
+        cout<<"1.-Personal \n 2.-Registro Perro";
+        int n;
+        cin>>n;
+        if (n==1){
+            //FUNCION PERSONAL
+        }
+        else if (n==2){
+            int id=01;
+            Grande Paquito(id,"Paquito","Husky",1,12);
+            
+
+        }
     }
 }
