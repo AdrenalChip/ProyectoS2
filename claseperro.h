@@ -147,4 +147,6 @@ int Grande::get_numero(){
  * @param 
  * @return 
 */
-
+float Grande::set_cantidad(){
+    //AQUI NECESITO PERSONAS
+}
