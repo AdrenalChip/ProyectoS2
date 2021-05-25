@@ -7,6 +7,8 @@
 
 //ALIMENTAR AQUI ES NECESARIiO WOHO //
 
+#ifndef Refugio_H_
+#define Refugio_H_
 #include <iostream>
 #include <string>
 #include <stdio.h>
@@ -61,3 +63,4 @@ id++;
 perr[id]=new Pequeno(id,"Perrito","Chihuahua",1,15);
 id++;
 };
+#endif

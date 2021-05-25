@@ -11,6 +11,8 @@
  * Junto con los metodos necesarios, como saber la cantidad de perros, que comen
  * y cantidad de alimento restante
 */
+#ifndef Perro_H_
+#define Perro_H_
 
 #include <iostream>
 #include <string>
@@ -180,3 +182,4 @@ void Pequeno::set_cantidad(){
     cantidad=cantidad+1;
     //AQUI NECESITO PERSONAS PARA PONER COMO FUNCIONA ALIMENTAR
 };
+#endif

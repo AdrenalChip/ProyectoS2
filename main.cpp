@@ -14,20 +14,8 @@ Jorge Guerrero Díaz A01411752
 #include "refugio.h"
 using namespace std;
 int main (){
-    int x=1;
-    while (x=1){
-        cout<<"1.-Personal \n 2.-Registro Perro";
-        int n;
-        cin>>n;
-        if (n==1){
-            //FUNCION PERSONAL
-        }
-        else if (n==2){
-            Refugio *Jorge;
-            Jorge->agrega_grande(2,"Paquito","Husky",2,13);
-            Jorge->ejemplo();
-            Jorge->mostrar();
-
-        }
-    }
+    Refugio *Jorge;
+    Jorge->agrega_grande(2,"Paquito","Husky",2,13);
+    Jorge->ejemplo();
+    Jorge->mostrar();
 }
