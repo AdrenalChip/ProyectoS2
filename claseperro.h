@@ -148,5 +148,113 @@ int Grande::get_numero(){
  * @return 
 */
 float Grande::set_cantidad(){
-    //AQUI NECESITO PERSONAS
+    //AQUI NECESITO PERSONAS PARA PONER COMO FUNCIONA ALIMENTAR
+}
+
+//Declaracion de la subclase Mediano de perro
+class Mediano : public Perro{
+    private:
+        //Declaro valores de instancia
+        string alimento="Dog Chow para Razas medianas";
+        float cantidad; //alimento
+        int numero;
+    public:
+        //Declaro los metodos que va a tener mi objeto
+        /* Constructor
+         * @param int:id, string:name, string:raza, int:state, int:age,int:numero
+         * @return Objeto 
+        */
+       Mediano(int ide,string nombre,string especie,int estad, int edad):Perro(ide,nombre,especie,estad,edad){
+           numero=numero+ 1;
+       }
+       //Declaro los metodos que va a tener mi objeto
+        /* Constructor
+         * @param int:id, int:state, int:age,int:numero
+         * @return Objeto 
+        */
+       Mediano(int ide,int estad, int edad):Perro(ide,estad,edad){
+           numero=numero+1;
+       }
+       float get_cantidad();
+       float set_cantidad();
+       int get_numero();
+};
+
+/*
+ * getter cantidad
+ * @param
+ * @return float:cantidad de alimento del perro
+*/
+float Mediano::get_cantidad(){
+    return cantidad;
+};
+/*
+ * getter age
+ * @param
+ * @return int:numero del perro
+*/
+int Mediano::get_numero(){
+    return numero;
+};
+/*
+ * setter cantidad
+ * @param 
+ * @return 
+*/
+float Mediano::set_cantidad(){
+    //AQUI NECESITO PERSONAS PARA PONER COMO FUNCIONA ALIMENTAR
+}
+
+//Declaracion de la subclase Pequeno de perro
+class Pequeno : public Perro{
+    private:
+        //Declaro valores de instancia
+        string alimento="Dog Chow para Razas pequeñas";
+        float cantidad; //alimento
+        int numero;
+    public:
+        //Declaro los metodos que va a tener mi objeto
+        /* Constructor
+         * @param int:id, string:name, string:raza, int:state, int:age,int:numero
+         * @return Objeto 
+        */
+       Pequeno(int ide,string nombre,string especie,int estad, int edad):Perro(ide,nombre,especie,estad,edad){
+           numero=numero+ 1;
+       }
+       //Declaro los metodos que va a tener mi objeto
+        /* Constructor
+         * @param int:id, int:state, int:age,int:numero
+         * @return Objeto 
+        */
+       Pequeno(int ide,int estad, int edad):Perro(ide,estad,edad){
+           numero=numero+1;
+       }
+       float get_cantidad();
+       float set_cantidad();
+       int get_numero();
+};
+
+/*
+ * getter cantidad
+ * @param
+ * @return float:cantidad de alimento del perro
+*/
+float Pequeno::get_cantidad(){
+    return cantidad;
+};
+/*
+ * getter age
+ * @param
+ * @return int:numero del perro
+*/
+int Pequeno::get_numero(){
+    return numero;
+};
+/*
+ * setter cantidad
+ * @param 
+ * @return 
+*/
+float Pequeno::set_cantidad(){
+    //AQUI NECESITO PERSONAS PARA PONER COMO FUNCIONA ALIMENTAR
 }
