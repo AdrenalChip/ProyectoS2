@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <stdio.h>
 
 using namespace std;
@@ -40,11 +41,12 @@ class Perro{
          * @return Objeto Perro 
         */
        Perro(int ide,int estad, int edad):id(ide),name("-"),raza("-"),state(estad),age(edad){};
-       int get_id(); //incluir nombre y raza
+
        void get_state();
        int get_age();
        void set_state(); //APUNTADORES I GUESS
        void set_age(int n);
+       string get_id();
     
 };
 //Geterrs de id,state,age
@@ -53,9 +55,10 @@ class Perro{
  * @param
  * @return int:id del perro
 */
-int Perro::get_id(){
-    cout<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza;
-    return id;
+string Perro::get_id(){
+    stringstream aux;
+    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza;
+    return aux.str();
 }
 
 /*
