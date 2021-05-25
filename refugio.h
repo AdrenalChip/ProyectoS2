@@ -5,6 +5,8 @@
  *18/05/2021
 */
 
+//ALIMENTAR AQUI ES NECESARIO WOHO 
+
 #include <iostream>
 #include <string>
 #include <stdio.h>
@@ -12,9 +14,12 @@
 
 using namespace std;
 
+const int MAX=1000;
+
 class Refugio {
     private:
-        int capacity=100;
-        
+        int budget;
+        Perro *perr[MAX];
+
     public:
 };
