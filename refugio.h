@@ -5,7 +5,7 @@
  *18/05/2021
 */
 
-//ALIMENTAR AQUI ES NECESARIO WOHO 
+//ALIMENTAR AQUI ES NECESARIiO WOHO //
 
 #include <iostream>
 #include <string>
@@ -32,7 +32,7 @@ class Refugio {
         void agrega_grande(int ide,string nombre,string especie,int estad,int edad);
         void agrega_mediano(int ide,string nombre,string especie,int estad,int edad);
         void agrega_pequeno(int ide,string nombre,string especie,int estad,int edad);
-        void mostrar(string algo);
+        void mostrar();
         void ejemplo();
 };
 
@@ -48,7 +48,7 @@ void Refugio::agrega_pequeno(int ide,string nombre,string especie,int estad,int 
     perr[id]= new Pequeno(ide,nombre,especie,estad,edad);
     id++;
 };
-void Refugio::mostrar(string algo){
+void Refugio::mostrar(){
     for (int i=0;i< id; i++){    
       cout<< perr[i]->get_id();
     }

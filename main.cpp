@@ -11,7 +11,7 @@ Jorge Guerrero Díaz A01411752
 #include <string>
 #include <stdio.h>
 #include <claseperro.h>
-
+#include <refugio.h>
 using namespace std;
 void main (){
     int x=1;
@@ -23,9 +23,9 @@ void main (){
             //FUNCION PERSONAL
         }
         else if (n==2){
-            int id=01;
-            Grande Paquito(id,"Paquito","Husky",1,12);
-            
+            Refugio *Jorge;
+            Jorge->agrega_grande(2,"Paquito","Husky",2,13);
+            Jorge->mostrar();
 
         }
     }
