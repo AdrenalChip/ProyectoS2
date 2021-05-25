@@ -22,7 +22,7 @@ using namespace std;
 //Declaracion de la Clase Perros
 
 class Perro{
-    private:
+    protected:
         //Declaro variables de instancia 
         int id;
         string name;
@@ -46,7 +46,7 @@ class Perro{
        int get_age();
        void set_state(); //APUNTADORES I GUESS
        void set_age(int n);
-       string get_id();
+       virtual string get_id()=0;;
     
 };
 //Geterrs de id,state,age
@@ -55,11 +55,7 @@ class Perro{
  * @param
  * @return int:id del perro
 */
-string Perro::get_id(){
-    stringstream aux;
-    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza;
-    return aux.str();
-}
+
 
 /*
  * getter state
@@ -127,8 +123,13 @@ class Grande : public Perro{
        float get_cantidad();
        float set_cantidad();
        int get_numero();
+       string get_id();
 };
-
+string Grande::get_id(){
+    stringstream aux;
+    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza;
+    return aux.str();
+}
 /*
  * getter cantidad
  * @param
@@ -181,8 +182,13 @@ class Mediano : public Perro{
        float get_cantidad();
        float set_cantidad();
        int get_numero();
+       string get_id();
 };
-
+string Mediano::get_id(){
+    stringstream aux;
+    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza;
+    return aux.str();
+}
 /*
  * getter cantidad
  * @param
@@ -235,8 +241,13 @@ class Pequeno : public Perro{
        float get_cantidad();
        float set_cantidad();
        int get_numero();
+       string get_id();
 };
-
+string Pequeno::get_id(){
+    stringstream aux;
+    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza;
+    return aux.str();
+}
 /*
  * getter cantidad
  * @param
