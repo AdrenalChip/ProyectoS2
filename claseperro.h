@@ -44,20 +44,19 @@ class Perro{
         */
        Perro(int ide,int estad, int edad):id(ide),name("-"),raza("-"),state(estad),age(edad){};
 
-       int get_state();
-       int get_age();
+       void get_state();
+       void get_age();
        void set_state(); //APUNTADORES I GUESS
-       void set_age(int n);
+       void set_age();
        virtual string get_id()=0;;
     
 };
 //Geterrs de id,state,age
-int Perro::get_state(){
-    cout<<"1.-Sano \n 2.-Enfermo \n 3.-Muerto \n 4.-Adoptado \n"<<state;
-    return state;
+void Perro::get_state(){
+    cout<<"1.-Sano \n 2.-Enfermo \n 3.-Muerto \n 4.-Adoptado \n"<<"Su estado es :"<< state<<"\n";
 };
-int Perro::get_age(){
-    return age;
+void Perro::get_age(){
+    cout<<"El perro lleva "<<age<<"de vida";
 };
 void Perro::set_state(){
     int n;
@@ -65,7 +64,10 @@ void Perro::set_state(){
     cin>>n;
     state=n;
 };
-void Perro::set_age(int n){
+void Perro::set_age(){
+    int n;
+    cout<<"Cuantos años lleva desde que arribo al refugio?";
+    cin>>n;
     age=age+n;
 };
 
@@ -84,26 +86,12 @@ class Grande : public Perro{
        Grande(int ide,int estad, int edad):Perro(ide,estad,edad){
            numero=numero+1;
        };
-       float get_cantidad();
-       void set_cantidad();
-       int get_numero();
        string get_id();
 };
 string Grande::get_id(){
     stringstream aux;
-    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza; 
+    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza <<"\n"; 
     return aux.str();
-};
-
-float Grande::get_cantidad(){
-    return cantidad;
-};
-int Grande::get_numero(){
-    return numero;
-};
-void Grande::set_cantidad(){
-    cantidad=cantidad+1;
-    //AQUI NECESITO PERSONAS PARA PONER COMO FUNCIONA ALIMENTAR
 };
 
 //Declaracion de la subclase Mediano de perro
@@ -122,26 +110,12 @@ class Mediano : public Perro{
        Mediano(int ide,int estad, int edad):Perro(ide,estad,edad){
            numero=numero+1;
        };
-       float get_cantidad();
-       void set_cantidad();
-       int get_numero();
        string get_id();
 };
 string Mediano::get_id(){
     stringstream aux;
-    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza;
+    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza<<"\n";
     return aux.str();
-};
-float Mediano::get_cantidad(){
-    return cantidad;
-};
-int Mediano::get_numero(){
-    return numero;
-};
-
-void Mediano::set_cantidad(){
-    //AQUI NECESITO PERSONAS PARA PONER COMO FUNCIONA ALIMENTAR
-    cantidad=cantidad+1;
 };
 
 //Declaracion de la subclase Pequeno de perro
@@ -160,26 +134,12 @@ class Pequeno : public Perro{
        Pequeno(int ide,int estad, int edad):Perro(ide,estad,edad){
            numero=numero+1;
        };
-       float get_cantidad();
-       void set_cantidad();
-       int get_numero();
        string get_id();
 };
 string Pequeno::get_id(){
     stringstream aux;
-    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza;
+    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza<<"\n";
     return aux.str();
 };
-float Pequeno::get_cantidad(){
-    return cantidad;
-};
 
-int Pequeno::get_numero(){
-    return numero;
-};
-
-void Pequeno::set_cantidad(){
-    cantidad=cantidad+1;
-    //AQUI NECESITO PERSONAS PARA PONER COMO FUNCIONA ALIMENTAR
-};
 #endif
