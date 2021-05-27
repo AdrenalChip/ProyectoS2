@@ -90,7 +90,7 @@ class Grande : public Perro{
 };
 string Grande::get_id(){
     stringstream aux;
-    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza <<"\n"; 
+    aux<<"El perro "<< id <<" de nombre "<< name << " de raza "<< raza <<"\n"; 
     return aux.str();
 };
 
@@ -114,7 +114,7 @@ class Mediano : public Perro{
 };
 string Mediano::get_id(){
     stringstream aux;
-    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza<<"\n";
+    aux<<"El perro "<< id <<" de nombre "<< name << " de raza "<< raza <<"\n";
     return aux.str();
 };
 
@@ -138,7 +138,7 @@ class Pequeno : public Perro{
 };
 string Pequeno::get_id(){
     stringstream aux;
-    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza<<"\n";
+    aux<<"El perro "<< id <<" de nombre "<< name << " de raza "<< raza<<"\n";
     return aux.str();
 };
 

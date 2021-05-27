@@ -48,7 +48,7 @@ class Voluntario : public Persona{
 };
 string Voluntario::get_id(){
     stringstream aux;
-    aux<<"La persona "<<id<<"de nombre "<<name<< "horas:"<< horas <<"se encuentra trabajando (1.-Si 2/3.-No)"<<state <<"\n"; 
+    aux<<"La persona "<< id <<" de nombre "<< name << " horas: "<< horas <<" se encuentra trabajando (1.-Si 2/3.-No) "<< state <<"\n"; 
     return aux.str();
 };
 void Voluntario::set_horas(){
@@ -73,7 +73,7 @@ class Empleado : public Persona{
 };
 string Empleado::get_id(){
     stringstream aux;
-    aux<<"La persona "<<id<<"de nombre "<<name<< "Turno:"<< turno <<"se encuentra trabajando (1.-Si 2/3.-No)"<<state <<"\n"; 
+    aux<<"La persona "<< id <<" de nombre "<< name << " Turno: "<< turno <<" se encuentra trabajando (1.-Si 2/3.-No) "<< state <<"\n"; 
     return aux.str();
 };
 void Empleado::get_pay(){

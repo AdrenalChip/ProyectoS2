@@ -23,9 +23,9 @@ class Refugio {
     private:
         float budget;
         Perro *perr[MAX];
-        int id =0;
+        int id =1;
         Persona *peop[MAX];
-        int ids=0;
+        int ids=1;
     public:
         Refugio():budget(0) {};
         ~Refugio(){
@@ -35,36 +35,36 @@ class Refugio {
             }
         };
 
-        void agrega_grande(int ide,string nombre,string especie,int estad,int edad);
-        void agrega_mediano(int ide,string nombre,string especie,int estad,int edad);
-        void agrega_pequeno(int ide,string nombre,string especie,int estad,int edad);
+        void agrega_grande(int id,string nombre,string especie,int estad,int edad);
+        void agrega_mediano(int id,string nombre,string especie,int estad,int edad);
+        void agrega_pequeno(int id,string nombre,string especie,int estad,int edad);
 
-        void agrega_voluntario(int ide,string nombre,int estad,float hour);
-        void agrea_empleado(int ide,string nombre,int estad,string turnos);
+        void agrega_voluntario(int ids,string nombre,int estad,float hour);
+        void agrea_empleado(int ids,string nombre,int estad,string turnos);
 
         void mostrar();
         void mostrar_personas();
         void ejemplo();
 };
 
-void Refugio::agrega_grande(int ide,string nombre,string especie,int estad,int edad){
-    perr[id]= new Grande(ide,nombre,especie,estad,edad);
+void Refugio::agrega_grande(int id,string nombre,string especie,int estad,int edad){
+    perr[id]= new Grande(id,nombre,especie,estad,edad);
     id++;
 };
-void Refugio::agrega_mediano(int ide,string nombre,string especie,int estad,int edad){
-    perr[id]= new Mediano(ide,nombre,especie,estad,edad);
+void Refugio::agrega_mediano(int id,string nombre,string especie,int estad,int edad){
+    perr[id]= new Mediano(id,nombre,especie,estad,edad);
     id++;
 };
-void Refugio::agrega_pequeno(int ide,string nombre,string especie,int estad,int edad){
-    perr[id]= new Pequeno(ide,nombre,especie,estad,edad);
+void Refugio::agrega_pequeno(int id,string nombre,string especie,int estad,int edad){
+    perr[id]= new Pequeno(id,nombre,especie,estad,edad);
     id++;
 };
-void Refugio::agrega_voluntario(int ide,string nombre,int estad,float hour){
-    peop[ids]= new Voluntario(ide,nombre,estad,hour);
+void Refugio::agrega_voluntario(int ids,string nombre,int estad,float hour){
+    peop[ids]= new Voluntario(ids,nombre,estad,hour);
     ids++;
 };
-void Refugio::agrea_empleado(int ide,string nombre,int estad,string turno){
-    peop[ids]=new Empleado(ide,nombre,estad,turno);
+void Refugio::agrea_empleado(int ids,string nombre,int estad,string turno){
+    peop[ids]=new Empleado(ids,nombre,estad,turno);
     ids++;
 };
 void Refugio::mostrar(){
@@ -87,9 +87,9 @@ id++;
 perr[id]=new Pequeno(id,"Perrito","Chihuahua",1,15);
 id++;
 
-peop[id]=new Voluntario(ids,"Juanito",2,1.33);
+peop[ids]=new Voluntario(ids,"Juanito",2,1.33);
 ids++;
-peop[id]=new Empleado(ids,"Pepe",1,"Matutino");
+peop[ids]=new Empleado(ids,"Pepe",1,"Matutino");
 ids++;
 
 };

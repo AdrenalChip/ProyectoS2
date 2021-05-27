@@ -19,8 +19,9 @@ using namespace std;
 int main (){
     
     Refugio Jorge;
-    Jorge.agrega_grande(2,"Paquito","Husky",2,13);
+    Jorge.agrega_grande(0,"Paquito","Husky",2,13);
+    Jorge.agrea_empleado(0,"Pepe",1,"Matutino");
     Jorge.ejemplo();
     Jorge.mostrar();
-    
+    Jorge.mostrar_personas();
 };
