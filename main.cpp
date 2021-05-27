@@ -13,9 +13,17 @@ Jorge Guerrero Díaz A01411752
 #include "claseperro.h"
 #include "refugio.h"
 using namespace std;
+
 int main (){
-    Refugio *Jorge;
-    Jorge->agrega_grande(2,"Paquito","Husky",2,13);
-    Jorge->ejemplo();
-    Jorge->mostrar();
-}
+    cout<<"Hola que tal";
+    Refugio Jorge;
+    Jorge.agrega_grande(2,"Paquito","Husky",2,13);
+    Jorge.ejemplo();
+    Jorge.mostrar();
+    //Perro *pedro = new Grande(2,"Pedro","OLa",2,32);
+    //cout<< pedro->get_id();
+    //Jorge->ejemplo();
+    //Jorge->mostrar();
+    //delete pedro;
+    //delete Jorge;
+};

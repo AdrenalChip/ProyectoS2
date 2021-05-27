@@ -91,7 +91,7 @@ class Grande : public Perro{
 };
 string Grande::get_id(){
     stringstream aux;
-    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza;
+    aux<<"El perro"<<id<<"de nombre "<<name<< "de raza "<<raza; 
     return aux.str();
 };
 

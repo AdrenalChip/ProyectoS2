@@ -31,6 +31,7 @@ class Refugio {
             delete perr[i];
             }
         };
+
         void agrega_grande(int ide,string nombre,string especie,int estad,int edad);
         void agrega_mediano(int ide,string nombre,string especie,int estad,int edad);
         void agrega_pequeno(int ide,string nombre,string especie,int estad,int edad);
@@ -54,6 +55,7 @@ void Refugio::mostrar(){
     for (int i=0;i< id; i++){    
       cout<< perr[i]->get_id();
     }
+    
 };
 void Refugio::ejemplo(){
 perr[id]=new Grande(id,"Perrote","Husky",2,13);
