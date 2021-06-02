@@ -5,7 +5,6 @@
  *18/05/2021
 */
 
-//ALIMENTAR AQUI ES NECESARIiO WOHO //
 
 #ifndef Refugio_H_
 #define Refugio_H_
@@ -27,7 +26,15 @@ class Refugio {
         Persona *peop[MAX];
         int ids=1;
     public:
+        /* Constructor
+         * @param 
+         * @return Objeto Refugio 
+        */
         Refugio():budget(0) {};
+        /* Destructor
+         * @param 
+         * @return  
+        */
         ~Refugio(){
         for (int i=0; i < id;i++){
             delete perr[i];
@@ -47,38 +54,111 @@ class Refugio {
         void ejemplo();
 };
 
+/* agrega_grande
+ * Funcion que llama al constructor  de la subclase Grande de la clase Perro y genera un objeto 
+ * tipo perro que se almacena en la lista como apuntador
+ * 
+ * @param int:id, string:nombre, string:especie, int:estad, int:edad
+ * @return 
+*/
 void Refugio::agrega_grande(int id,string nombre,string especie,int estad,int edad){
     perr[id]= new Grande(id,nombre,especie,estad,edad);
     id++;
 };
+
+
+/* agrega_mediano
+ * Funcion que llama al constructor de la subclase Mediano de la clase Perro y genera un objeto 
+ * tipo perro que se almacena en la lista como apuntador
+ * 
+ * @param int:id, string:nombre, string:especie, int:estad, int:edad
+ * @return 
+*/
 void Refugio::agrega_mediano(int id,string nombre,string especie,int estad,int edad){
     perr[id]= new Mediano(id,nombre,especie,estad,edad);
     id++;
 };
+
+
+/* agrega_pequeno
+ * Funcion que llama al constructor de la subclase Pequeno de la clase Perro y genera un objeto 
+ * tipo perro que se almacena en la lista como apuntador
+ * 
+ * @param int:id, string:nombre, string:especie, int:estad, int:edad
+ * @return 
+*/
 void Refugio::agrega_pequeno(int id,string nombre,string especie,int estad,int edad){
     perr[id]= new Pequeno(id,nombre,especie,estad,edad);
     id++;
 };
+
+
+/* agrega_voluntario
+ * Funcion que llama al constructor de la subclase Voluntario de la clase Personas y genera un objeto 
+ * tipo persona que se almacena en la lista como apuntador
+ * 
+ * @param int:ids, string:nombre, int:estad, float:hour
+ * @return 
+*/
 void Refugio::agrega_voluntario(int ids,string nombre,int estad,float hour){
     peop[ids]= new Voluntario(ids,nombre,estad,hour);
     ids++;
 };
+
+
+/* agrega_empleado
+ * Funcion que llama al constructor de la subclase Empleado de la clase Personas y genera un objeto 
+ * tipo persona que se almacena en la lista como apuntador
+ * 
+ * @param int:ids, string:nombre, int:estad, string:turno
+ * @return 
+*/
 void Refugio::agrea_empleado(int ids,string nombre,int estad,string turno){
     peop[ids]=new Empleado(ids,nombre,estad,turno);
     ids++;
 };
+
+
+/* mostrar
+ * Funcion que a traves de un ciclo for  que recorre desde el 0 hasta el numero maximo 
+ * de perros almaceanos que llama a la funcion get_id() de
+ * todos los objetos alamcenados en la lista de perros.
+ * 
+ * @param 
+ * @return 
+*/
 void Refugio::mostrar(){
     for (int i=0;i< id; i++){    
       cout<< perr[i]->get_id();
     }
     
 };
+
+
+/* mostrar_personas
+ * Funcion que a traves de un ciclo for  que recorre desde el 0 hasta el numero maximo 
+ * de ppersonas almaceanos que llama a la funcion get_id() de
+ * todos los objetos alamcenados en la lista de personas.
+ * 
+ * @param 
+ * @return 
+*/
 void Refugio::mostrar_personas(){
     for (int i=0;i< ids; i++){    
       cout<< peop[i]->get_id();
     }
     
 };
+
+
+/* ejemplo
+ * Funcion usada para probar que se generen de manera adecuada 
+ * los objetos y que no haya problemas entre constructores, tanto 
+ * de la clase perro como la clase personas.
+ * 
+ * @param 
+ * @return 
+*/
 void Refugio::ejemplo(){
 perr[id]=new Grande(id,"Perrote","Husky",2,13);
 id++;

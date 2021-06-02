@@ -52,18 +52,50 @@ class Perro{
     
 };
 //Geterrs de id,state,age
+
+/* get_state
+ * Funcion que nos permite visualizar el estado en el que se encuentra el perro
+ * 
+ * @param 
+ * @return 
+*/
 void Perro::get_state(){
     cout<<"1.-Sano \n 2.-Enfermo \n 3.-Muerto \n 4.-Adoptado \n"<<"Su estado es :"<< state<<"\n";
 };
+
+
+/* get_age
+ * Funcion que nos regresa el valor de la edad de el perro en el refugio
+ * 
+ * @param 
+ * @return 
+*/
 void Perro::get_age(){
     cout<<"El perro lleva "<<age<<"de vida";
 };
+
+
+/* set_state
+ * Funcion que nos permite establecer el estado de un perro
+ * mediante un input generado dentro de la misma funcion.
+ * 
+ * @param 
+ * @return 
+*/
 void Perro::set_state(){
     int n;
     cout<<"1.-Sano \n 2.-Enfermo \n 3.-Muerto \n 4.-Adoptado";
     cin>>n;
     state=n;
 };
+
+
+/* set_age
+ * Funcion que nos regresa el valor de la edad de el perro en el refugio
+ * 
+ * @param 
+ * @return 
+*/
 void Perro::set_age(){
     int n;
     cout<<"Cuantos años lleva desde que arribo al refugio?";
