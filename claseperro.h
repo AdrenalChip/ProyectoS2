@@ -91,7 +91,8 @@ void Perro::set_state(){
 
 
 /* set_age
- * Funcion que nos regresa el valor de la edad de el perro en el refugio
+ * Funcion que nos permita ir cambiando la edad de los perros conforme
+ * el paso de los años dentro del refugio
  * 
  * @param 
  * @return 
@@ -120,6 +121,15 @@ class Grande : public Perro{
        };
        string get_id();
 };
+
+
+/* get_id
+ * Funcion que nos permite imprimir todas la informacion de cada mascota de tipo grande
+ * que se guarda en una variable stringstream
+ * 
+ * @param 
+ * @return aux.str() 
+*/
 string Grande::get_id(){
     stringstream aux;
     aux<<"El perro "<< id <<" de nombre "<< name << " de raza "<< raza <<"\n"; 
@@ -144,6 +154,14 @@ class Mediano : public Perro{
        };
        string get_id();
 };
+
+/* get_id
+ * Funcion que nos permite imprimir todas la informacion de cada mascota de tipo mediano
+ * que se guarda en una variable stringstream
+ * 
+ * @param 
+ * @return aux.str() 
+*/
 string Mediano::get_id(){
     stringstream aux;
     aux<<"El perro "<< id <<" de nombre "<< name << " de raza "<< raza <<"\n";
@@ -168,6 +186,13 @@ class Pequeno : public Perro{
        };
        string get_id();
 };
+/* get_id
+ * Funcion que nos permite imprimir todas la informacion de cada mascota de tipo pequeño
+ * que se guarda en una variable stringstream
+ * 
+ * @param 
+ * @return aux.str() 
+*/
 string Pequeno::get_id(){
     stringstream aux;
     aux<<"El perro "<< id <<" de nombre "<< name << " de raza "<< raza<<"\n";
