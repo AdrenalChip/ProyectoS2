@@ -28,10 +28,11 @@ int main (){
         cin>>n;
         if (n==1){
             string name,raza;
-            int edad,estado;
-            
+            int edad,estado,IDE;
+            IDE=Eustaquio.get_id();
             cout<<"Informacion necesaria \n Nombre:";
             cin>>name;
+            
         }else if (n==2){
 
         }
