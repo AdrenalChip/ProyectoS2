@@ -49,11 +49,20 @@ class Refugio {
         void agrega_voluntario(int ids,string nombre,int estad,float hour);
         void agrea_empleado(int ids,string nombre,int estad,string turnos);
 
+        int get_id();
+        int get_ids();
+
         void mostrar();
         void mostrar_personas();
         void ejemplo();
 };
+int Refugio::get_id(){
+    return id;
+}
 
+int Refugio::get_ids(){
+    return ids;
+}
 /* agrega_grande
  * Funcion que llama al constructor  de la subclase Grande de la clase Perro y genera un objeto 
  * tipo perro que se almacena en la lista como apuntador
