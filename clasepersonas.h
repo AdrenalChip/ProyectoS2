@@ -30,32 +30,29 @@ class Persona{
     public:
         Persona(int ide, string nombre, string turnos,int estad):id(ide),name(nombre),turno(turnos),state(estad){};
         Persona(int ide,string nombre,int estad):id(ide),name(nombre),state(estad){};
-        virtual string get_id()=0;;
-        void set_state();
+        virtual string get_id()=0;
+        virtual void set_state()=0;
 };
 
-/* set_state
- * Funcion que nos permite modificar la variable de estado del turno de la persona
- * mediante un input
- * 
- * @param 
- * @return 
-*/
-void Persona::set_state(){
-    cout<<"1.-Estan en su turno \n 2.-Acabaron su turno \n 3.-No arrivaron";
-    cin>>state;
-};
 
 class Voluntario : public Persona{
     protected:
         float horas;
     public:
-        Voluntario(int ide,string nombre,int estad,float hour):horas(hour),Persona(ide,nombre,estad){};
+        Voluntario(int ide,string nombre,int estad):Persona(ide,nombre,estad){
+            horas=0;
+        };
         string get_id();
         void set_horas();
         void get_horas();
+        void set_state();
 };
 
+void Voluntario::set_state(){
+    cout<<"1.-Estan en su turno \n 2.-Acabaron su turno \n 3.-No arrivaron";
+    cin>>state;
+    set_horas();
+};
 
 /* get_id
  * Funcion que nos permite imprimir los datos de informacion del voluntariado
@@ -105,7 +102,14 @@ class Empleado : public Persona{
         };
         string get_id();
         void get_pay();
-        void set_pay();  
+        void set_pay(); 
+        void set_state(); 
+};
+
+void Empleado::set_state(){
+    cout<<"1.-Estan en su turno \n 2.-Acabaron su turno \n 3.-No arrivaron";
+    cin>>state;
+    set_pay();
 };
 
 /* get_id

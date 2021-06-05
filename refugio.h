@@ -46,7 +46,7 @@ class Refugio {
         void agrega_mediano(int id,string nombre,string especie,int estad,int edad);
         void agrega_pequeno(int id,string nombre,string especie,int estad,int edad);
 
-        void agrega_voluntario(int ids,string nombre,int estad,float hour);
+        void agrega_voluntario(int ids,string nombre,int estad);
         void agrea_empleado(int ids,string nombre,int estad,string turnos);
 
         int get_id();
@@ -109,8 +109,8 @@ void Refugio::agrega_pequeno(int id,string nombre,string especie,int estad,int e
  * @param int:ids, string:nombre, int:estad, float:hour
  * @return 
 */
-void Refugio::agrega_voluntario(int ids,string nombre,int estad,float hour){
-    peop[ids]= new Voluntario(ids,nombre,estad,hour);
+void Refugio::agrega_voluntario(int ids,string nombre,int estad){
+    peop[ids]= new Voluntario(ids,nombre,estad);
     ids++;
 };
 
@@ -139,8 +139,13 @@ void Refugio::agrea_empleado(int ids,string nombre,int estad,string turno){
 void Refugio::mostrar(){
     for (int i=0;i< id; i++){    
       cout<< perr[i]->get_id();
+      cout<<"Deseas hacer algo con este perro? \n 1.-Si 2.-No";
+      int ans;
+      cin>>ans;
+      if (ans==1){
+          perr[i]->set_state();
+      };
     }
-    
 };
 
 
@@ -155,6 +160,12 @@ void Refugio::mostrar(){
 void Refugio::mostrar_personas(){
     for (int i=0;i< ids; i++){    
       cout<< peop[i]->get_id();
+      cout<<"Deseas hacer algo con esta persona? \n 1.-Si 2.-No";
+      int ans;
+      cin>>ans;
+      if (ans==1){
+          peop[i]->set_state();
+      }
     }
     
 };
@@ -176,7 +187,7 @@ id++;
 perr[id]=new Pequeno(id,"Perrito","Chihuahua",1,15);
 id++;
 
-peop[ids]=new Voluntario(ids,"Juanito",2,1.33);
+peop[ids]=new Voluntario(ids,"Juanito",2);
 ids++;
 peop[ids]=new Empleado(ids,"Pepe",1,"Matutino");
 ids++;
