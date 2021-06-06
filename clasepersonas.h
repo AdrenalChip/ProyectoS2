@@ -62,7 +62,7 @@ void Voluntario::set_state(){
 */
 string Voluntario::get_id(){
     stringstream aux;
-    aux<<"La persona "<< id <<" de nombre "<< name << " horas: "<< horas <<" se encuentra trabajando (1.-Si 2/3.-No) "<< state <<"\n"; 
+    aux<<"La persona "<< id <<" de nombre "<< name << " horas: "<< horas <<" se encuentra trabajando (1.-Si 2/3.-No) "<< state <<"\n";
     return aux.str();
 };
 

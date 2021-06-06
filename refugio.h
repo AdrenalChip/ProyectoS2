@@ -22,21 +22,22 @@ class Refugio {
     private:
         float budget;
         Perro *perr[MAX];
-        int id =1;
+        int id =0;
         Persona *peop[MAX];
-        int ids=1;
+        int ids=0;
     public:
         /* Constructor
          * @param 
          * @return Objeto Refugio 
         */
-        Refugio():budget(0) {};
+        Refugio():budget(0){};
         /* Destructor
          * @param 
          * @return  
         */
         ~Refugio(){
-        for (int i=0; i < id;i++){
+        cout<<"Ejucatando destructor..";
+        for (int i=0; i <= id;i++){
             delete perr[i];
             delete peop[i];
             }
@@ -137,14 +138,16 @@ void Refugio::agrea_empleado(int ids,string nombre,int estad,string turno){
  * @return 
 */
 void Refugio::mostrar(){
-    for (int i=0;i< id; i++){    
+    for (int i=0;i <= id; i++){    
       cout<< perr[i]->get_id();
       cout<<"Deseas hacer algo con este perro? \n 1.-Si 2.-No";
       int ans;
       cin>>ans;
       if (ans==1){
           perr[i]->set_state();
-      };
+      }else{
+          cout<<"\nNo hay cambios\n";
+      }
     }
 };
 
@@ -158,13 +161,15 @@ void Refugio::mostrar(){
  * @return 
 */
 void Refugio::mostrar_personas(){
-    for (int i=0;i< ids; i++){    
+    for (int i=0;i <= ids; i++){  
       cout<< peop[i]->get_id();
       cout<<"Deseas hacer algo con esta persona? \n 1.-Si 2.-No";
       int ans;
       cin>>ans;
       if (ans==1){
           peop[i]->set_state();
+      }else{
+          cout<<"\n No hay cambios\n";
       }
     }
     
