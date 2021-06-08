@@ -17,7 +17,7 @@ El programa permite mantener un registro de los perros que se encuentran en el r
 Es necesario tener los tres archivos descargados en una misma carpeta, los dos archivos .h, claseperro y clasepersonas, y el .cpp, llamado MAIN.
 
 # Consideracions 
-Elprgorama solo corre en la consola y esta hecho con c++ stanrd por lo que corre en todos los sistemas operativos 
+El prgorama solo corre en la consola y esta hecho con c++ stanrd por lo que corre en todos los sistemas operativos 
 
 compliar con "g++ claseperro.h refugio.h clasepersonas.h main.cpp"
 
@@ -25,8 +25,9 @@ correr en windows "a.exe"
 
 en linux "/a.out"
 
-#Correciones 
+# Correciones 
 Se realizaron las siguientes correciones:
 
 1-Correcion del UML
+
 2.-Dentro de la clase Perro hay dos constructores diferentes por si no se conocen el nombre 
