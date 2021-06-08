@@ -24,3 +24,9 @@ compliar con "g++ claseperro.h refugio.h clasepersonas.h main.cpp"
 correr en windows "a.exe"
 
 en linux "/a.out"
+
+#Correciones 
+Se realizaron las siguientes correciones:
+
+1-Correcion del UML
+2.-Dentro de la clase Perro hay dos constructores diferentes por si no se conocen el nombre 
