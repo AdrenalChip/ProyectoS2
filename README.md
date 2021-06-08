@@ -13,6 +13,9 @@ Este proyecto trata acerca de un refugio para perros en donde se mantiene un reg
 
 El programa permite mantener un registro de los perros que se encuentran en el refugio, personas que laboran en el reufgio y maneras de modificar dicho registro
 
+# Estructura
+Es necesario tener los tres archivos descargados en una misma carpeta, los dos archivos .h, claseperro y clasepersonas, y el .cpp, llamado MAIN.
+
 # Consideracions 
 E lprgorama solo corre en la consola y esta hecho con c++ stanrd por lo que corre en todos los sistemas operativos 
 compliar con "g++ claseperro.h refugio.h clasepersonas.h main.cpp"
