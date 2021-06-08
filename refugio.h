@@ -5,7 +5,12 @@
  *18/05/2021
 */
 
-
+/*
+ * Clase Refugio que contiene los y manaje 
+ * la informacion de dos clases unidas por tipo de composicion
+ * Recibe clase Perro y clase Persona
+ * Junto con los metodos necesarios para generar nuevos objetos y manipularlos
+*/
 #ifndef Refugio_H_
 #define Refugio_H_
 #include <iostream>
@@ -17,7 +22,6 @@
 using namespace std;
 
 const int MAX=100;
-
 class Refugio {
     private:
         float budget;
@@ -37,10 +41,12 @@ class Refugio {
         */
         ~Refugio(){
         cout<<"Ejucatando destructor..";
-        for (int i=0; i <= id;i++){
+        for (int i=0; i < id;i++){
             delete perr[i];
-            delete peop[i];
             }
+        for (int i=0;i < ids;i++){
+            delete peop[i];
+        }
         };
 
         void agrega_grande(int id,string nombre,string especie,int estad,int edad);
@@ -53,17 +59,61 @@ class Refugio {
         int get_id();
         int get_ids();
 
+        void set_id();
+        void set_ids();
+
         void mostrar();
         void mostrar_personas();
         void ejemplo();
 };
+
+
+/* get_id
+ * Funcion que nos permite ver el valor del id 
+ * posicion dentro del arreglo de objetos tipo perro
+ * @param 
+ * @return id 
+*/
 int Refugio::get_id(){
     return id;
 }
 
+
+/* get_ids
+ * Funcion que nos permite ver el valor del ids 
+ * posicion dentro del arreglo de objetos tipo personas
+ * @param 
+ * @return ids
+*/
 int Refugio::get_ids(){
     return ids;
 }
+
+
+/* set_id
+ * Funcion que nos permite establecer el valor del id 
+ * De uno en uno, por cada objeto perro generado
+ * posicion dentro del arreglo de objetos tipo perro
+ * @param 
+ * @return id 
+*/
+void Refugio::set_id(){
+    id++;
+}
+
+
+/* set_ids
+ * Funcion que nos permite establecer el valor del ids 
+ * De uno en uno, por cada objeto persona generado
+ * posicion dentro del arreglo de objetos tipo persona
+ * @param 
+ * @return id 
+*/
+void Refugio::set_ids(){
+    ids++;
+}
+
+
 /* agrega_grande
  * Funcion que llama al constructor  de la subclase Grande de la clase Perro y genera un objeto 
  * tipo perro que se almacena en la lista como apuntador
@@ -73,7 +123,7 @@ int Refugio::get_ids(){
 */
 void Refugio::agrega_grande(int id,string nombre,string especie,int estad,int edad){
     perr[id]= new Grande(id,nombre,especie,estad,edad);
-    id++;
+    set_id();
 };
 
 
@@ -86,7 +136,7 @@ void Refugio::agrega_grande(int id,string nombre,string especie,int estad,int ed
 */
 void Refugio::agrega_mediano(int id,string nombre,string especie,int estad,int edad){
     perr[id]= new Mediano(id,nombre,especie,estad,edad);
-    id++;
+    set_id();
 };
 
 
@@ -99,7 +149,7 @@ void Refugio::agrega_mediano(int id,string nombre,string especie,int estad,int e
 */
 void Refugio::agrega_pequeno(int id,string nombre,string especie,int estad,int edad){
     perr[id]= new Pequeno(id,nombre,especie,estad,edad);
-    id++;
+    set_id();
 };
 
 
@@ -112,7 +162,7 @@ void Refugio::agrega_pequeno(int id,string nombre,string especie,int estad,int e
 */
 void Refugio::agrega_voluntario(int ids,string nombre,int estad){
     peop[ids]= new Voluntario(ids,nombre,estad);
-    ids++;
+    set_ids();
 };
 
 
@@ -125,7 +175,7 @@ void Refugio::agrega_voluntario(int ids,string nombre,int estad){
 */
 void Refugio::agrea_empleado(int ids,string nombre,int estad,string turno){
     peop[ids]=new Empleado(ids,nombre,estad,turno);
-    ids++;
+    set_ids();
 };
 
 
@@ -133,14 +183,14 @@ void Refugio::agrea_empleado(int ids,string nombre,int estad,string turno){
  * Funcion que a traves de un ciclo for  que recorre desde el 0 hasta el numero maximo 
  * de perros almaceanos que llama a la funcion get_id() de
  * todos los objetos alamcenados en la lista de perros.
- * 
+ * y nos permite realizar ciertos cambios a cada perro.
  * @param 
  * @return 
 */
 void Refugio::mostrar(){
-    for (int i=0;i <= id; i++){    
+    for (int i=0;i < id; i++){    
       cout<< perr[i]->get_id();
-      cout<<"Deseas hacer algo con este perro? \n 1.-Si 2.-No";
+      cout<<"Deseas hacer algo con este perro? \n 1.-Si 2.-No\n (introduzca el numero de una opcion)";
       int ans;
       cin>>ans;
       if (ans==1){
@@ -156,14 +206,14 @@ void Refugio::mostrar(){
  * Funcion que a traves de un ciclo for  que recorre desde el 0 hasta el numero maximo 
  * de ppersonas almaceanos que llama a la funcion get_id() de
  * todos los objetos alamcenados en la lista de personas.
- * 
+ * Y nos permite modificar estados de las personas dependiendo del objeto
  * @param 
  * @return 
 */
 void Refugio::mostrar_personas(){
-    for (int i=0;i <= ids; i++){  
+    for (int i=0;i < ids; i++){  
       cout<< peop[i]->get_id();
-      cout<<"Deseas hacer algo con esta persona? \n 1.-Si 2.-No";
+      cout<<"Deseas hacer algo con esta persona? \n 1.-Si 2.-No\n (introduzca el numero de una opcion)";
       int ans;
       cin>>ans;
       if (ans==1){
@@ -185,17 +235,17 @@ void Refugio::mostrar_personas(){
  * @return 
 */
 void Refugio::ejemplo(){
-perr[id]=new Grande(id,"Perrote","Husky",2,13);
-id++;
-perr[id]=new Mediano(id,"Perrete","SnoopDog",3,14);
-id++;
-perr[id]=new Pequeno(id,"Perrito","Chihuahua",1,15);
-id++;
+    perr[id]=new Grande(id,"Perrote","Husky",2,13);
+    set_id();
+    perr[id]=new Mediano(id,"Perrete","SnoopDog",3,14);
+    set_id();
+    perr[id]=new Pequeno(id,"Perrito","Chihuahua",1,15);
+    set_id();
 
-peop[ids]=new Voluntario(ids,"Juanito",2);
-ids++;
-peop[ids]=new Empleado(ids,"Pepe",1,"Matutino");
-ids++;
+    peop[ids]=new Voluntario(ids,"Juanito",2);
+    set_ids();
+    peop[ids]=new Empleado(ids,"Pepe",1,"Matutino");
+    set_ids();
 
 };
 #endif

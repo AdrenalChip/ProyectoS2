@@ -8,8 +8,8 @@
 /*
  * Clase Perros que contiene los atributos de las 3 subclases:
  * Grandes, Pequeños, Medianos
- * Junto con los metodos necesarios, como saber la cantidad de perros, que comen
- * y cantidad de alimento restante
+ * Junto con los metodos necesarios y medios para obtener la informacion
+ * requerida.
 */
 #ifndef Perro_H_
 #define Perro_H_
@@ -46,7 +46,7 @@ class Perro{
 
        void get_state();
        void get_age();
-       void set_state(); //APUNTADORES I GUESS
+       void set_state(); 
        void set_age();
        virtual string get_id()=0;;
     
@@ -78,15 +78,16 @@ void Perro::get_age(){
 /* set_state
  * Funcion que nos permite establecer el estado de un perro
  * mediante un input generado dentro de la misma funcion.
- * 
+ * y llama a la funcion set_age
  * @param 
  * @return 
 */
 void Perro::set_state(){
     int n;
-    cout<<"1.-Sano \n 2.-Enfermo \n 3.-Muerto \n 4.-Adoptado";
+    cout<<"1.-Sano \n 2.-Enfermo \n 3.-Muerto \n 4.-Adoptado \n (introduzca el numero de una opcion)";
     cin>>n;
     state=n;
+    set_age();
 };
 
 
@@ -99,7 +100,7 @@ void Perro::set_state(){
 */
 void Perro::set_age(){
     int n;
-    cout<<"Cuantos años lleva desde que arribo al refugio?";
+    cout<<"Cuantos anos lleva desde que arribo al refugio? (Int)";
     cin>>n;
     age=age+n;
 };
@@ -110,14 +111,21 @@ class Grande : public Perro{
         //Declaro valores de instancia
         string alimento="Dog Chow para Razas grandes";
         float cantidad=0; //alimento
-        int numero=0;
-        
+
     public:
+       //Declaro los metodos que va a tener mi objeto
+
+       /* Constructor
+         * @param int ide,,string nombre,string especie,int estado,int edad
+         * @return 
+       */
        Grande(int ide,string nombre,string especie,int estad, int edad):Perro(ide,nombre,especie,estad,edad){
-           numero=numero+ 1;
        };
+       /* Constructor
+         * @param int ide,int estado,int edad
+         * @return 
+       */
        Grande(int ide,int estad, int edad):Perro(ide,estad,edad){
-           numero=numero+1;
        };
        string get_id();
 };
@@ -142,17 +150,21 @@ class Mediano : public Perro{
         //Declaro valores de instancia
         string alimento="Dog Chow para Razas medianas";
         float cantidad=0; //alimento
-        int numero=0;
     public:
         //Declaro los metodos que va a tener mi objeto
-       Mediano(int ide,string nombre,string especie,int estad, int edad):Perro(ide,nombre,especie,estad,edad){
-           numero=numero+ 1;
-       };
-       //Declaro los metodos que va a tener mi objeto
-       Mediano(int ide,int estad, int edad):Perro(ide,estad,edad){
-           numero=numero+1;
-       };
-       string get_id();
+        /* Constructor
+         * @param int ide,,string nombre,string especie,int estado,int edad
+         * @return 
+       */
+        Mediano(int ide,string nombre,string especie,int estad, int edad):Perro(ide,nombre,especie,estad,edad){
+        };
+        /* Constructor
+         * @param int ide,int estado,int edad
+         * @return 
+       */
+        Mediano(int ide,int estad, int edad):Perro(ide,estad,edad){
+        };
+        string get_id();
 };
 
 /* get_id
@@ -168,23 +180,28 @@ string Mediano::get_id(){
     return aux.str();
 };
 
-//Declaracion de la subclase Pequeno de perro
+//Declaracion de la subclase Pequeño de perro
 class Pequeno : public Perro{
     private:
         //Declaro valores de instancia
         string alimento="Dog Chow para Razas pequeñas";
         float cantidad=0; //alimento
-        int numero=0;
     public:
         //Declaro los metodos que va a tener mi objeto
-       Pequeno(int ide,string nombre,string especie,int estad, int edad):Perro(ide,nombre,especie,estad,edad){
-           numero=numero+ 1;
-       };
-       //Declaro los metodos que va a tener mi objeto
-       Pequeno(int ide,int estad, int edad):Perro(ide,estad,edad){
-           numero=numero+1;
-       };
-       string get_id();
+
+        /* Constructor
+         * @param int ide,,string nombre,string especie,int estado,int edad
+         * @return 
+       */
+        Pequeno(int ide,string nombre,string especie,int estad, int edad):Perro(ide,nombre,especie,estad,edad){
+        };
+        /* Constructor
+         * @param int ide,int estado,int edad
+         * @return 
+       */
+        Pequeno(int ide,int estad, int edad):Perro(ide,estad,edad){
+        };
+        string get_id();
 };
 /* get_id
  * Funcion que nos permite imprimir todas la informacion de cada mascota de tipo pequeño
